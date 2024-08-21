@@ -3,7 +3,7 @@ version: '3.9'
 services:
   dash:
     # This is for that asking the container to execute the main.py
-    command: python3 main.py
+    command: python3 dash_app.py
     # The image I upload to my docker hub
     image: akraradets/ait-ml-dash:2023
     # For MAC M1 user
