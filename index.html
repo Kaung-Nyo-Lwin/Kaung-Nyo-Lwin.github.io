@@ -1,958 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Kaung Nyo Lwin | Data Science & AI Professional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio of Kaung Nyo Lwin, Data Science & AI professional with experience in LLM systems, RAG, data analytics, and business-focused AI solutions." />
-  <style>
-    :root {
-      --bg: #0f172a;
-      --bg-soft: #020617;
-      --card: #020617;
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.1);
-      --text-main: #e5e7eb;
-      --text-soft: #9ca3af;
-      --border-subtle: #1f2937;
-      --chip-bg: #020617;
-      --chip-border: #1e293b;
-      --max-width: 1100px;
-      --radius-lg: 18px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 18px 50px rgba(15, 23, 42, 0.8);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #1e293b 0, #020617 45%, #000 100%);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      min-height: 100vh;
-      padding: 24px 16px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .shell {
-      width: 100%;
-      max-width: var(--max-width);
-    }
-
-    /* NAVBAR */
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      gap: 16px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .avatar-circle {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      background: radial-gradient(circle at 30% 20%, #4ade80 0, #22c55e 28%, #15803d 70%);
-      box-shadow: 0 0 0 3px rgba(34,197,94,0.3);
-    }
-
-    .nav-title {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .nav-name {
-      font-weight: 600;
-      font-size: 18px;
-    }
-
-    .nav-role {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .nav-links a {
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      color: var(--text-soft);
-      transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(15,23,42,0.85);
-      border-color: #1e293b;
-      color: #f9fafb;
-      transform: translateY(-1px);
-    }
-
-    .nav-links a.primary-link {
-      border-color: rgba(34,197,94,0.6);
-      background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(59,130,246,0.05));
-      color: #e5ffe9;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.4fr);
-      gap: 24px;
-      margin-bottom: 28px;
-    }
-
-    @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .hero-main {
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.12) 0, rgba(15,23,42,0.95) 35%, rgba(15,23,42,0.98) 100%);
-      border-radius: var(--radius-lg);
-      padding: 20px 22px 20px;
-      border: 1px solid rgba(55,65,81,0.7);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(34,197,94,0.5);
-      color: var(--accent);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      margin-bottom: 12px;
-    }
-
-    .hero-pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
-    }
-
-    .hero-title {
-      font-size: clamp(26px, 3vw, 32px);
-      font-weight: 700;
-      margin: 0 0 6px;
-    }
-
-    .hero-subtitle {
-      margin: 0 0 12px;
-      font-size: 16px;
-      color: var(--text-soft);
-      max-width: 640px;
-    }
-
-    .hero-highlight {
-      color: #bbf7d0;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .hero-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.9);
-      border: 1px solid rgba(75,85,99,0.9);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .btn {
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      padding: 8px 16px;
-      font-size: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease, border-color 0.18s ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #22c55e, #16a34a);
-      color: #022c22;
-      font-weight: 600;
-      box-shadow: 0 16px 35px rgba(34,197,94,0.35);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 20px 40px rgba(34,197,94,0.45);
-    }
-
-    .btn-ghost {
-      background: rgba(15,23,42,0.95);
-      border-color: rgba(55,65,81,0.9);
-      color: var(--text-soft);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15,23,42,1);
-      color: #f9fafb;
-      transform: translateY(-1px);
-    }
-
-    .btn span.icon {
-      font-size: 16px;
-    }
-
-    .hero-badge-grid {
-      position: absolute;
-      inset: auto auto 10px 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 11px;
-    }
-
-    .badge-soft {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.92);
-      border: 1px solid rgba(51,65,85,0.9);
-      color: var(--text-soft);
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .card {
-      background: rgba(15,23,42,0.96);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31,41,55,0.95);
-      padding: 14px 16px 15px;
-      box-shadow: 0 12px 30px rgba(15,23,42,0.7);
-    }
-
-    .card-title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 6px;
-    }
-
-    .card-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-soft);
-    }
-
-    .card-tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-      background: rgba(55,65,81,0.7);
-      color: #e5e7eb;
-    }
-
-    .card-body {
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 4px 0 0;
-      font-size: 13px;
-    }
-
-    .contact-list li {
-      margin-bottom: 4px;
-    }
-
-    .contact-label {
-      color: #6b7280;
-      font-size: 12px;
-      margin-right: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .link-inline {
-      color: #a5b4fc;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .pill {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.95);
-      border: 1px solid var(--chip-border);
-      color: #d1d5db;
-      white-space: nowrap;
-    }
-
-    /* GRID SECTIONS */
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.3fr);
-      gap: 20px;
-    }
-
-    @media (max-width: 920px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .section {
-      margin-top: 16px;
-    }
-
-    .section-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--text-soft);
-      margin: 0 0 10px;
-    }
-
-    .section-subtitle {
-      font-size: 13px;
-      color: var(--text-soft);
-      margin: -5px 0 10px;
-    }
-
-    .card-tight {
-      padding: 12px 14px 10px;
-      border-radius: 14px;
-    }
-
-    /* EXPERIENCE */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .job {
-      padding-bottom: 8px;
-      border-bottom: 1px solid rgba(31,41,55,0.85);
-    }
-
-    .job:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .job-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 4px;
-      margin-bottom: 2px;
-    }
-
-    .job-role {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .job-company {
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    .job-meta {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .job-meta span:not(:last-child)::after {
-      content: "•";
-      margin: 0 4px;
-      color: #4b5563;
-    }
-
-    .job-points {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      font-size: 13px;
-      color: #d1d5db;
-    }
-
-    .job-points li {
-      margin-bottom: 4px;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .project {
-      padding: 9px 10px 7px;
-      border-radius: 12px;
-      border: 1px solid rgba(31,41,55,0.95);
-      background: radial-gradient(circle at top left, rgba(34,197,94,0.06), rgba(15,23,42,0.98));
-    }
-
-    .project-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 2px;
-    }
-
-    .project-name {
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .project-tech {
-      font-size: 11px;
-      padding: 2px 7px;
-      border-radius: var(--radius-pill);
-      background: rgba(15,23,42,0.96);
-      border: 1px solid rgba(55,65,81,0.9);
-      color: var(--text-soft);
-    }
-
-    .project-desc {
-      font-size: 13px;
-      color: var(--text-soft);
-    }
-
-    /* SKILLS */
-    .skills-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 10px;
-    }
-
-    .skills-group-title {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: #9ca3af;
-      margin-bottom: 6px;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      font-size: 11px;
-      padding: 5px 9px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--chip-border);
-      background: var(--chip-bg);
-      color: #e5e7eb;
-      white-space: nowrap;
-    }
-
-    /* EDUCATION & CERTS */
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .edu-item-title {
-      font-weight: 600;
-    }
-
-    .edu-item-meta {
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    .certs-list {
-      margin: 4px 0 0;
-      padding-left: 18px;
-      font-size: 12px;
-      color: var(--text-soft);
-    }
-
-    /* FOOTER */
-    .footer {
-      margin-top: 22px;
-      padding-top: 14px;
-      font-size: 11px;
-      color: var(--text-soft);
-      border-top: 1px solid rgba(31,41,55,0.9);
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .footer a {
-      color: #9ca3af;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-      text-underline-offset: 3px;
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="shell">
-
-      <!-- NAVBAR -->
-      <header class="nav">
-        <div class="nav-left">
-          <div class="avatar-circle" aria-hidden="true"></div>
-          <div class="nav-title">
-            <div class="nav-name">Kaung Nyo Lwin</div>
-            <div class="nav-role">Data Science &amp; AI Professional</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaung Nyo Lwin | Career Profile</title>
+    <meta
+      name="description"
+      content="Career profile of Kaung Nyo Lwin – Senior Business Analyst and Data Science professional focused on AI-driven automation."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="shell">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="avatar-circle" aria-hidden="true"></div>
+            <div class="nav-title">
+              <span class="nav-name">Kaung Nyo Lwin</span>
+              <span class="nav-role">Data Science &amp; AI Professional</span>
+            </div>
           </div>
-        </div>
-        <nav class="nav-links">
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#education">Education</a>
-          <a class="primary-link" href="#contact">Contact</a>
+          <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a
+              class="primary-link"
+              href="KaungNyoLwin_Resume_20102025.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Résumé</a
+            >
+          </div>
         </nav>
-      </header>
 
-      <!-- HERO -->
-      <section class="hero" id="top">
-        <div class="hero-main">
-          <div class="hero-pill">
-            <span class="hero-pill-dot"></span>
-            <span>Open to Data &amp; AI Roles</span>
-          </div>
-          <h1 class="hero-title">Building data-driven, <span class="hero-highlight">LLM-powered systems</span> for real business impact.</h1>
-          <p class="hero-subtitle">
-            Data science &amp; AI professional with experience bridging analytics, data engineering, and large language models.
-            I design and implement RAG systems, AI agents, and data products that connect technical capability to business outcomes.
-          </p>
-          <div class="hero-meta">
-            <span><strong>Location</strong>: Pathum Thani, Thailand</span>
-            <span><strong>Languages</strong>: Myanmar (Native), English (C1)</span>
-          </div>
-          <div class="hero-buttons">
-            <a class="btn btn-primary" href="#experience">
-              <span class="icon">↘</span>
-              <span>View Experience</span>
-            </a>
-            <a class="btn btn-ghost" href="https://github.com/Kaung-Nyo-Lwin" target="_blank" rel="noreferrer">
-              <span class="icon">💻</span>
-              <span>GitHub Profile</span>
-            </a>
-          </div>
-          <div class="hero-badge-grid">
-            <div class="badge-soft">LLM Systems &amp; RAG</div>
-            <div class="badge-soft">Data Analytics &amp; BI</div>
-            <div class="badge-soft">MLOps &amp; Deployment</div>
-          </div>
-        </div>
-
-        <aside class="hero-side">
-          <div class="card card-tight">
-            <div class="card-title-row">
-              <div class="card-title">Contact</div>
-              <div class="card-tag">Let&apos;s connect</div>
+        <header class="hero">
+          <div class="hero-main">
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Senior Business Analyst · AI Engineer
             </div>
-            <ul class="contact-list">
-              <li>
-                <span class="contact-label">Email</span>
-                <a class="link-inline" href="mailto:kaungnyolwin@gmail.com">kaungnyolwin@gmail.com</a>
-              </li>
-              <li>
-                <span class="contact-label">Phone</span>
-                <a class="link-inline" href="tel:+66648328635">+66 648 328 635</a>
-              </li>
-              <li>
-                <span class="contact-label">GitHub</span>
-                <a class="link-inline" href="https://github.com/Kaung-Nyo-Lwin" target="_blank" rel="noreferrer">
-                  github.com/Kaung-Nyo-Lwin
-                </a>
-              </li>
-              <li>
-                <span class="contact-label">LinkedIn</span>
-                <a class="link-inline" href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145" target="_blank" rel="noreferrer">
-                  linkedin.com/in/kaung-nyo-lwin-31510b145
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="card card-tight">
-            <div class="card-title-row">
-              <div class="card-title">Current Focus</div>
-              <div class="card-tag">2025</div>
+            <h1 class="hero-title">
+              Building AI-assisted workflows that <span class="hero-highlight">scale operations</span>
+              and unlock faster decisions.
+            </h1>
+            <p class="hero-subtitle">
+              I partner with business stakeholders to translate complex requirements into data-driven
+              products. From SQL automation to LLM-powered assistants, my work reduces manual effort,
+              improves data visibility, and accelerates delivery across logistics, telecom, and SaaS
+              environments.
+            </p>
+            <div class="hero-meta">
+              <span>8+ years · Analytics &amp; Telecom</span>
+              <span>LLM, RAG &amp; ML Engineering</span>
+              <span>Process Automation Advocate</span>
             </div>
-            <div class="card-body">
-              AI Intern (LLM Developer) at AI Brain Lab, building ESG report generation pipelines,
-              conversational SET (Stock Exchange of Thailand) assistants, and RAG-based document retrieval systems.
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="experience.html">
+                <span class="icon">→</span>
+                View Experience
+              </a>
+              <a class="btn btn-ghost" href="mailto:kaungnyolwin@gmail.com">
+                <span class="icon">@</span>
+                Connect
+              </a>
             </div>
-            <div class="pill-row">
-              <div class="pill">FastAPI</div>
-              <div class="pill">LangChain / LangGraph</div>
-              <div class="pill">RAPTOR</div>
-              <div class="pill">PostgreSQL + Vectors</div>
+            <div class="hero-badge-grid">
+              <span class="badge-soft">SQL Automation</span>
+              <span class="badge-soft">Power BI</span>
+              <span class="badge-soft">RAG Architectures</span>
+              <span class="badge-soft">Stakeholder Workshops</span>
             </div>
           </div>
-        </aside>
-      </section>
-
-      <!-- MAIN GRID -->
-      <main class="layout">
-
-        <!-- LEFT: EXPERIENCE & PROJECTS -->
-        <div>
-
-          <!-- EXPERIENCE -->
-          <section class="section" id="experience">
-            <h2 class="section-title">Experience</h2>
-            <div class="card card-tight">
-              <div class="timeline">
-
-                <article class="job">
-                  <div class="job-header">
-                    <div>
-                      <div class="job-role">AI Intern (LLM Developer)</div>
-                      <div class="job-company">AI Brain Lab</div>
-                    </div>
-                    <div class="job-meta">
-                      <span>Jul 2025 – Present</span>
-                      <span>Pathum Thani, Thailand</span>
-                    </div>
-                  </div>
-                  <ul class="job-points">
-                    <li>Develop ESG report-generation pipelines using LLMs and retrieval-augmented generation (RAG).</li>
-                    <li>Build a conversational chatbot with FastAPI and OpenAI APIs for answering SET (Stock Exchange of Thailand) queries.</li>
-                    <li>Scrape and embed large volumes of SET documents using RAPTOR-style retrieval for semantic search.</li>
-                    <li>Implement table extraction and structured data parsing from CSV, PDF, and Excel for downstream analysis.</li>
-                    <li>Deploy Docker-based microservices to support scalable AI workflows and automated question answering.</li>
-                  </ul>
-                </article>
-
-                <article class="job">
-                  <div class="job-header">
-                    <div>
-                      <div class="job-role">Senior Business Analyst</div>
-                      <div class="job-company">KEYfields</div>
-                    </div>
-                    <div class="job-meta">
-                      <span>Feb 2023 – Jul 2024</span>
-                      <span>Logistics &amp; SaaS</span>
-                    </div>
-                  </div>
-                  <ul class="job-points">
-                    <li>Engineered complex SQL stored procedures to optimize data flows for accounting and logistics SaaS platforms.</li>
-                    <li>Automated deployment and database backup routines using PowerShell and Python, reducing runtime and errors by ~50%.</li>
-                    <li>Partnered with developers to translate business logic into robust data models and visual dashboards.</li>
-                    <li>Led workshops with stakeholders to align data requirements with scalable SaaS architecture.</li>
-                    <li>Supported production AI/analytics modules with technical troubleshooting and issue resolution.</li>
-                  </ul>
-                </article>
-
-                <article class="job">
-                  <div class="job-header">
-                    <div>
-                      <div class="job-role">Senior Asset Management Analyst</div>
-                      <div class="job-company">Telecom International Myanmar</div>
-                    </div>
-                    <div class="job-meta">
-                      <span>May 2020 – Sep 2020</span>
-                      <span>Telecom</span>
-                    </div>
-                  </div>
-                  <ul class="job-points">
-                    <li>Directed end-to-end logistics and inventory control for 100+ asset types across telecom operations.</li>
-                    <li>Developed Excel/VBA automation tools for asset tracking, cutting manual reporting workload by ~40%.</li>
-                    <li>Designed KPI dashboards to analyze asset utilization and optimize procurement cycles.</li>
-                    <li>Trained teams on data integrity and reporting standards to improve KPI adherence.</li>
-                  </ul>
-                </article>
-
-                <article class="job">
-                  <div class="job-header">
-                    <div>
-                      <div class="job-role">Asset Management Analyst</div>
-                      <div class="job-company">Telecom International Myanmar</div>
-                    </div>
-                    <div class="job-meta">
-                      <span>Jun 2017 – Apr 2020</span>
-                    </div>
-                  </div>
-                  <ul class="job-points">
-                    <li>Built Excel-based trackers and macro systems to support telecom tower deployment.</li>
-                    <li>Coordinated rollouts for 700+ sites, achieving ~98% KPI compliance through standardized processes.</li>
-                    <li>Improved communication between technical and business teams via data-driven dashboards.</li>
-                  </ul>
-                </article>
-
-                <article class="job">
-                  <div class="job-header">
-                    <div>
-                      <div class="job-role">Telecom Installation Engineer</div>
-                      <div class="job-company">Ericsson Myanmar</div>
-                    </div>
-                    <div class="job-meta">
-                      <span>Feb 2016 – May 2016</span>
-                    </div>
-                  </div>
-                  <ul class="job-points">
-                    <li>Performed site surveys, equipment installation, configuration, and call tests to ensure network readiness.</li>
-                    <li>Supported cross-team testing and documentation for quality assurance deliverables.</li>
-                  </ul>
-                </article>
-
+          <div class="hero-side">
+            <div class="card">
+              <div class="card-title-row">
+                <span class="card-title">Availability</span>
+                <span class="card-tag">Open</span>
               </div>
-            </div>
-          </section>
-
-          <!-- PROJECTS -->
-          <section class="section" id="projects">
-            <h2 class="section-title">Selected Projects</h2>
-            <p class="section-subtitle">Academic and personal projects that combine machine learning, LLMs, and practical deployment.</p>
-            <div class="card card-tight">
-              <div class="projects-grid">
-
-                <article class="project">
-                  <div class="project-header">
-                    <div class="project-name">Software Documentation Bot</div>
-                    <div class="project-tech">Python · LlamaIndex · Flask</div>
-                  </div>
-                  <p class="project-desc">
-                    Built an LLM-based assistant that generates and maintains software documentation from source artifacts,
-                    helping bridge communication between developers and business users and reducing manual documentation effort.
-                  </p>
-                </article>
-
-                <article class="project">
-                  <div class="project-header">
-                    <div class="project-name">Job Automation Risk Prediction</div>
-                    <div class="project-tech">Python · Scikit-Learn · Django</div>
-                  </div>
-                  <p class="project-desc">
-                    Developed a predictive model to estimate automation risk for different occupations, exposing results through
-                    a web interface with interactive dashboards for career exploration and policy discussion.
-                  </p>
-                </article>
-
-                <article class="project">
-                  <div class="project-header">
-                    <div class="project-name">Customer Churn Prediction System</div>
-                    <div class="project-tech">Dash · Scikit-Learn · Pandas</div>
-                  </div>
-                  <p class="project-desc">
-                    Implemented classification models on telecom customer data to predict churn, emphasizing business-oriented
-                    metrics and risk factors to support retention strategies.
-                  </p>
-                </article>
-
-                <article class="project">
-                  <div class="project-header">
-                    <div class="project-name">Less-Attention Vision Transformer</div>
-                    <div class="project-tech">PyTorch · Deep Learning</div>
-                  </div>
-                  <p class="project-desc">
-                    Re-implemented and experimented with a less-attention Vision Transformer architecture for image classification,
-                    focusing on efficiency and performance trade-offs for research use.
-                  </p>
-                </article>
-
-              </div>
-            </div>
-          </section>
-
-        </div>
-
-        <!-- RIGHT: SKILLS, EDUCATION, ETC -->
-        <aside>
-
-          <!-- SKILLS -->
-          <section class="section" id="skills">
-            <h2 class="section-title">Skills Snapshot</h2>
-            <div class="card card-tight">
-              <div class="skills-columns">
-
-                <div>
-                  <div class="skills-group-title">Programming &amp; Frameworks</div>
-                  <div class="chip-row">
-                    <span class="chip">Python</span>
-                    <span class="chip">SQL</span>
-                    <span class="chip">PowerShell</span>
-                    <span class="chip">VBA</span>
-                    <span class="chip">FastAPI</span>
-                    <span class="chip">PyTorch</span>
-                    <span class="chip">LaTeX</span>
-                    <span class="chip">LangChain</span>
-                    <span class="chip">LlamaIndex</span>
-                    <span class="chip">HuggingFace</span>
-                    <span class="chip">Vector DBs (FAISS, PG)</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="skills-group-title">AI &amp; ML</div>
-                  <div class="chip-row">
-                    <span class="chip">Machine Learning</span>
-                    <span class="chip">Deep Learning</span>
-                    <span class="chip">RAG Systems</span>
-                    <span class="chip">Agents &amp; Tools</span>
-                    <span class="chip">MCP</span>
-                    <span class="chip">Reasoning in LLMs</span>
-                    <span class="chip">DPO / PPO / GRPO</span>
-                    <span class="chip">OpenAI APIs</span>
-                    <span class="chip">NLP</span>
-                    <span class="chip">Computer Vision</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="skills-group-title">Data &amp; Analytics</div>
-                  <div class="chip-row">
-                    <span class="chip">NumPy</span>
-                    <span class="chip">Pandas</span>
-                    <span class="chip">Matplotlib</span>
-                    <span class="chip">Seaborn</span>
-                    <span class="chip">Power BI</span>
-                    <span class="chip">Excel Automation</span>
-                    <span class="chip">PostgreSQL</span>
-                    <span class="chip">MySQL</span>
-                    <span class="chip">MSSQL</span>
-                    <span class="chip">MongoDB</span>
-                    <span class="chip">Data Cleaning &amp; ETL</span>
-                  </div>
-                </div>
-
-                <div>
-                  <div class="skills-group-title">MLOps &amp; Deployment</div>
-                  <div class="chip-row">
-                    <span class="chip">Docker</span>
-                    <span class="chip">MLflow</span>
-                    <span class="chip">API Development</span>
-                    <span class="chip">Version Control (Git)</span>
-                  </div>
-                  <div class="skills-group-title" style="margin-top: 10px;">Business &amp; Soft Skills</div>
-                  <div class="chip-row">
-                    <span class="chip">ESG Reporting</span>
-                    <span class="chip">Telecom Logistics</span>
-                    <span class="chip">Asset Management</span>
-                    <span class="chip">SaaS Systems</span>
-                    <span class="chip">Cross-functional Collaboration</span>
-                    <span class="chip">Stakeholder Communication</span>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-
-          <!-- EDUCATION -->
-          <section class="section" id="education">
-            <h2 class="section-title">Education &amp; Certifications</h2>
-            <div class="card card-tight">
-              <div class="edu-list">
-                <div>
-                  <div class="edu-item-title">Master of Engineering, Data Science &amp; Artificial Intelligence</div>
-                  <div class="edu-item-meta">Asian Institute of Technology · 2024 – 2026 · Pathum Thani, Thailand</div>
-                </div>
-                <div>
-                  <div class="edu-item-title">Bachelor of Engineering, Avionics</div>
-                  <div class="edu-item-meta">Myanmar Aerospace Engineering University · 2010 – 2015 · Meiktila, Myanmar</div>
-                </div>
-              </div>
-              <div style="margin-top: 10px;">
-                <div class="skills-group-title">Selected Certificates</div>
-                <ul class="certs-list">
-                  <li>IBM Data Science</li>
-                  <li>IBM Data Analyst</li>
-                  <li>Mathematics for Machine Learning and Data Science – DeepLearning.AI</li>
-                  <li>Machine Learning Specialization – DeepLearning.AI</li>
-                  <li>TensorFlow Developer – DeepLearning.AI</li>
-                  <li>Deep Learning Specialization – DeepLearning.AI</li>
-                  <li>Fundamentals of Accounting – University of Illinois</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <!-- CONTACT / CALL TO ACTION -->
-          <section class="section" id="contact">
-            <h2 class="section-title">Contact &amp; Links</h2>
-            <div class="card card-tight">
               <p class="card-body">
-                I am open to opportunities in data science, AI engineering, and LLM-driven product development.
-                Feel free to reach out about roles, collaborations, or research-oriented projects.
+                Seeking roles in data science, AI engineering, and LLM-driven product development across
+                APAC or remote-first teams.
               </p>
+            </div>
+            <div class="card">
+              <div class="card-title-row">
+                <span class="card-title">Current Focus</span>
+              </div>
+              <p class="card-body">
+                AI Brain Lab – building ESG report-generation pipelines, conversational bots, and document
+                retrieval systems for the Stock Exchange of Thailand.
+              </p>
+              <div class="pill-row">
+                <span class="pill">FastAPI</span>
+                <span class="pill">OpenAI APIs</span>
+                <span class="pill">RAPTOR Retrieval</span>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title-row">
+                <span class="card-title">Contact</span>
+              </div>
               <ul class="contact-list">
                 <li>
                   <span class="contact-label">Email</span>
@@ -964,34 +116,85 @@
                 </li>
                 <li>
                   <span class="contact-label">GitHub</span>
-                  <a class="link-inline" href="https://github.com/Kaung-Nyo-Lwin" target="_blank" rel="noreferrer">
-                    github.com/Kaung-Nyo-Lwin
-                  </a>
+                  <a
+                    class="link-inline"
+                    href="https://github.com/Kaung-Nyo-Lwin"
+                    target="_blank"
+                    rel="noreferrer"
+                    >github.com/Kaung-Nyo-Lwin</a
+                  >
                 </li>
                 <li>
                   <span class="contact-label">LinkedIn</span>
-                  <a class="link-inline" href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145" target="_blank" rel="noreferrer">
-                    linkedin.com/in/kaung-nyo-lwin-31510b145
-                  </a>
+                  <a
+                    class="link-inline"
+                    href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145"
+                    target="_blank"
+                    rel="noreferrer"
+                    >linkedin.com/in/kaung-nyo-lwin-31510b145</a
+                  >
                 </li>
               </ul>
             </div>
-          </section>
+          </div>
+        </header>
 
-        </aside>
-      </main>
+        <section class="page-section">
+          <h2 class="page-heading">Explore the Portfolio</h2>
+          <p class="page-subhead">
+            Dive into detailed timelines, project write-ups, and curated skillsets. Each section mirrors the
+            structure of my résumé for quick reference.
+          </p>
+          <div class="page-link-grid">
+            <a class="page-link-card" href="experience.html">
+              <h3>Experience</h3>
+              <p>Timeline covering KEYfields, Telecom International Myanmar, Ericsson, and current AI work.</p>
+            </a>
+            <a class="page-link-card" href="projects.html">
+              <h3>Projects</h3>
+              <p>LLM assistants, automation-risk forecasting, churn modeling, and research builds.</p>
+            </a>
+            <a class="page-link-card" href="skills.html">
+              <h3>Skills</h3>
+              <p>Programming, AI/ML, analytics, MLOps, and business expertise at a glance.</p>
+            </a>
+            <a class="page-link-card" href="education.html">
+              <h3>Education</h3>
+              <p>Academic background plus marquee certifications from DeepLearning.AI and IBM.</p>
+            </a>
+            <a class="page-link-card" href="contact.html">
+              <h3>Contact</h3>
+              <p>Reach out for collaboration, mentorship, or analytics leadership roles.</p>
+            </a>
+          </div>
+        </section>
 
-      <!-- FOOTER -->
-      <footer class="footer">
-        <div>© <span id="year"></span> Kaung Nyo Lwin</div>
-        <div>Hosted on <a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a></div>
-      </footer>
+        <section class="page-section">
+          <h2 class="section-title">Snapshot</h2>
+          <div class="callout-grid">
+            <div class="callout-card">
+              <h3>Operational Impact</h3>
+              <p>40% reduction in manual logistics effort via automation and +98% on-time delivery for 700+ towers.</p>
+            </div>
+            <div class="callout-card">
+              <h3>AI Enablement</h3>
+              <p>Hands-on across LLM tooling, RAG architectures, and ML pipelines powering ESG and telecom solutions.</p>
+            </div>
+            <div class="callout-card">
+              <h3>Cross-Functional Lead</h3>
+              <p>Bridges business and engineering teams through workshops, requirement docs, and iterative delivery.</p>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© <span id="year"></span> Kaung Nyo Lwin</div>
+          <div>Hosted on <a href="https://pages.github.com/" target="_blank" rel="noreferrer">GitHub Pages</a></div>
+        </footer>
+      </div>
     </div>
-  </div>
-
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

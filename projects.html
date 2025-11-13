@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects | Kaung Nyo Lwin</title>
+    <meta name="description" content="Selected AI, ML, and analytics projects by Kaung Nyo Lwin." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="shell">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="avatar-circle" aria-hidden="true"></div>
+            <div class="nav-title">
+              <span class="nav-name">Kaung Nyo Lwin</span>
+              <span class="nav-role">Data Science &amp; AI Professional</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a
+              class="primary-link"
+              href="KaungNyoLwin_Resume_20102025.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Résumé</a
+            >
+          </div>
+        </nav>
+
+        <header class="page-section">
+          <h1 class="page-heading">Projects</h1>
+          <p class="page-subhead">
+            A mix of professional, academic, and personal initiatives that highlight LLM systems, predictive
+            modeling, and automation for real-world stakeholders.
+          </p>
+        </header>
+
+        <section class="section">
+          <div class="card card-tight">
+            <div class="projects-grid">
+              <article class="project">
+                <div class="project-header">
+                  <div class="project-name">Software Documentation Bot</div>
+                  <div class="project-tech">Python · LlamaIndex · Flask</div>
+                </div>
+                <p class="project-desc">
+                  Built an LLM-powered assistant that transforms source artifacts into structured documentation,
+                  bridging communication between engineering and business teams while cutting manual effort.
+                </p>
+              </article>
+
+              <article class="project">
+                <div class="project-header">
+                  <div class="project-name">Job Automation Risk Prediction</div>
+                  <div class="project-tech">Python · Scikit-Learn · Django</div>
+                </div>
+                <p class="project-desc">
+                  Forecasted automation risk for Myanmar occupations using MyJob data and Frey &amp; Osborne’s framework,
+                  exposing insights through an interactive web interface for policymakers and job seekers.
+                </p>
+              </article>
+
+              <article class="project">
+                <div class="project-header">
+                  <div class="project-name">Customer Churn Prediction System</div>
+                  <div class="project-tech">Dash · Scikit-Learn · Pandas</div>
+                </div>
+                <p class="project-desc">
+                  Developed classification models on telecom data to flag churn risk, pairing explainable ML with a dashboard
+                  to drive proactive retention campaigns.
+                </p>
+              </article>
+
+              <article class="project">
+                <div class="project-header">
+                  <div class="project-name">Less-Attention Vision Transformer</div>
+                  <div class="project-tech">PyTorch · Deep Learning</div>
+                </div>
+                <p class="project-desc">
+                  Implemented a LaViT-style transformer that reduces attention cost while preserving spatial information,
+                  exploring efficiency/performance trade-offs for research scenarios.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© <span id="year"></span> Kaung Nyo Lwin</div>
+          <div>More demos available on <a href="https://github.com/Kaung-Nyo-Lwin">GitHub</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

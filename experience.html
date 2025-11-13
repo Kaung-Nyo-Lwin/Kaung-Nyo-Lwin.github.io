@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Experience | Kaung Nyo Lwin</title>
+    <meta name="description" content="Professional experience timeline for Kaung Nyo Lwin." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="shell">
+        <nav class="nav">
+          <div class="nav-left">
+            <div class="avatar-circle" aria-hidden="true"></div>
+            <div class="nav-title">
+              <span class="nav-name">Kaung Nyo Lwin</span>
+              <span class="nav-role">Data Science &amp; AI Professional</span>
+            </div>
+          </div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+            <a
+              class="primary-link"
+              href="KaungNyoLwin_Resume_20102025.pdf"
+              target="_blank"
+              rel="noreferrer"
+              >Résumé</a
+            >
+          </div>
+        </nav>
+
+        <header class="page-section">
+          <h1 class="page-heading">Experience</h1>
+          <p class="page-subhead">
+            A timeline of roles spanning AI research, data analytics, logistics, and telecom operations with
+            an emphasis on automation and stakeholder alignment.
+          </p>
+        </header>
+
+        <section class="section">
+          <div class="card card-tight">
+            <div class="timeline">
+              <article class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="job-role">AI Intern (LLM Developer)</div>
+                    <div class="job-company">AI Brain Lab · Pathum Thani, Thailand</div>
+                  </div>
+                  <div class="job-meta">
+                    <span>Jul 2025 – Present</span>
+                  </div>
+                </div>
+                <ul class="job-points">
+                  <li>Build ESG report-generation pipelines using retrieval-augmented generation (RAG) techniques.</li>
+                  <li>Develop conversational chatbots with FastAPI and OpenAI APIs for Stock Exchange of Thailand queries.</li>
+                  <li>Implement large-scale document scraping, embedding, and RAPTOR-style retrieval for semantic search.</li>
+                  <li>Extract structured data from CSV, PDF, and Excel sources for downstream analytics.</li>
+                  <li>Containerize AI services with Docker to ensure scalable deployments.</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="job-role">Senior Business Analyst</div>
+                    <div class="job-company">KEYfields · Logistics &amp; SaaS</div>
+                  </div>
+                  <div class="job-meta">
+                    <span>Feb 2023 – Jul 2024</span>
+                  </div>
+                </div>
+                <ul class="job-points">
+                  <li>Engineered SQL stored procedures to optimize accounting and logistics SaaS data flows.</li>
+                  <li>Automated deployment and backup routines with PowerShell and Python, halving runtime and errors.</li>
+                  <li>Led workshops translating business logic into scalable data models and dashboards.</li>
+                  <li>Supported production AI/analytics modules through structured issue resolution.</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="job-role">Senior Asset Management Analyst</div>
+                    <div class="job-company">Telecom International Myanmar</div>
+                  </div>
+                  <div class="job-meta">
+                    <span>May 2020 – Sep 2020</span>
+                  </div>
+                </div>
+                <ul class="job-points">
+                  <li>Directed logistics and inventory control for 100+ asset types across telecom operations.</li>
+                  <li>Developed Excel/VBA automation tools, reducing manual reporting workloads by ~40%.</li>
+                  <li>Designed KPI dashboards to analyze asset utilization and procurement cycles.</li>
+                  <li>Trained teams on data integrity and KPI adherence.</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="job-role">Asset Management Analyst</div>
+                    <div class="job-company">Telecom International Myanmar</div>
+                  </div>
+                  <div class="job-meta">
+                    <span>Jun 2017 – Apr 2020</span>
+                  </div>
+                </div>
+                <ul class="job-points">
+                  <li>Built Excel-based trackers and macro systems to support telecom tower deployment.</li>
+                  <li>Coordinated rollouts for 700+ sites, sustaining 98% on-time delivery.</li>
+                  <li>Improved cross-team communication with data-driven dashboards.</li>
+                </ul>
+              </article>
+
+              <article class="job">
+                <div class="job-header">
+                  <div>
+                    <div class="job-role">Telecom Installation Engineer</div>
+                    <div class="job-company">Ericsson Myanmar</div>
+                  </div>
+                  <div class="job-meta">
+                    <span>Feb 2016 – May 2016</span>
+                  </div>
+                </div>
+                <ul class="job-points">
+                  <li>Surveyed tower sites, installed equipment, configured systems, and executed call tests.</li>
+                  <li>Delivered detailed installation documentation to accelerate maintenance readiness.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div>© <span id="year"></span> Kaung Nyo Lwin</div>
+          <div>Need more detail? Download the <a href="KaungNyoLwin_Resume_20102025.pdf">résumé</a>.</div>
+        </footer>
+      </div>
+    </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
