@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Kaung Nyo Lwin — AI Engineer &amp; Researcher</title>
+  <desc id="description">Computer vision, language models, and software systems. From AI research to working systems.</desc>
+  <defs>
+    <style>
+      @font-face{font-family:Lato;src:url('fonts/lato-regular.woff');font-weight:400}
+      @font-face{font-family:Lato;src:url('fonts/lato-bold.woff');font-weight:700}
+      text{font-family:Lato,Arial,sans-serif}
+    </style>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#dfe5f2" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#f8f9fc"/>
+  <rect x="864" width="336" height="630" fill="url(#grid)"/>
+  <path d="M904 472V254h190V140" fill="none" stroke="#b7c6ed" stroke-width="2"/>
+  <path d="M922 422h153V276H963V182" fill="none" stroke="#304fc4" stroke-width="2" stroke-dasharray="5 8"/>
+  <rect x="914" y="240" width="150" height="150" rx="24" fill="#304fc4"/>
+  <path d="M953 277v76m0-36 55-40m-55 40 58 36m9-76v76" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1094" cy="140" r="7" fill="#304fc4"/>
+  <circle cx="904" cy="472" r="7" fill="#304fc4"/>
+  <text x="72" y="90" fill="#304fc4" font-size="16" font-weight="700" letter-spacing="3">KAUNG NYO LWIN</text>
+  <text x="68" y="220" fill="#182133" font-size="77" font-weight="700" letter-spacing="-3">AI Engineer</text>
+  <text x="68" y="315" fill="#304fc4" font-size="77" font-weight="700" letter-spacing="-3">&amp; Researcher</text>
+  <text x="72" y="381" fill="#5c6576" font-size="27">From AI research to working systems.</text>
+  <path d="M72 449H807" stroke="#d6deed"/>
+  <text x="72" y="490" fill="#465575" font-size="18">Computer vision</text>
+  <circle cx="228" cy="484" r="2" fill="#8a9abe"/>
+  <text x="245" y="490" fill="#465575" font-size="18">Language models</text>
+  <circle cx="408" cy="484" r="2" fill="#8a9abe"/>
+  <text x="425" y="490" fill="#465575" font-size="18">Software systems</text>
+  <text x="72" y="562" fill="#304fc4" font-size="19">kaung-nyo-lwin.github.io</text>
+</svg>

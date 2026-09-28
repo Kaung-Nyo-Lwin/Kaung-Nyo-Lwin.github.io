@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f9fc">
+<title>L2BC — Verifiable Reinforcement Learning | Kaung Nyo Lwin</title>
+<meta name="description" content="L2BC is Kaung Nyo Lwin's completed master's thesis: teaching compact language models to generate data visualizations through rule-based verification and adaptive reinforcement learning.">
+<link rel="canonical" href="https://kaung-nyo-lwin.github.io/research.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="L2BC — Learning with verifiable rewards">
+<meta property="og:description" content="A completed master's thesis on reinforcement learning for data visualization, by Kaung Nyo Lwin.">
+<meta property="og:url" content="https://kaung-nyo-lwin.github.io/research.html">
+<meta property="og:image" content="https://kaung-nyo-lwin.github.io/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kaung Nyo Lwin — AI Engineer &amp; Researcher. Computer vision, language models, and software systems.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preload" href="assets/fonts/lato-regular.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="assets/fonts/lato-bold.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="./" aria-label="Kaung Nyo Lwin, home"><img src="assets/favicon.svg" width="32" height="32" alt=""><span>Kaung Nyo Lwin<span class="brand-sub">AI Engineer &amp; Researcher</span></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+      <a href="index.html#work">Work</a><a href="index.html#research">Research</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<header class="article-hero container">
+  <a class="breadcrumb" href="index.html#research"><span aria-hidden="true">←</span> Back to portfolio</a>
+  <p class="eyebrow">L2BC · LEARN TO BE COOL</p>
+  <h1>Teaching small models<br>with <em>verifiable rewards.</em></h1>
+  <p class="article-lead">A reinforcement learning framework that turns questions and tables into executable visualization code—and checks what the chart actually says.</p>
+  <div class="article-meta"><span>Completed master’s thesis</span><span>Asian Institute of Technology</span><span>Reinforcement learning · Generative AI</span></div>
+</header>
+<div class="article-body container">
+  <section class="article-block" aria-labelledby="question-title"><h2 id="question-title">The problem</h2><div><p>A chart can render successfully and still show the wrong data. Generating a useful visualization requires a language model to select and join tables, transform values, choose the right visual encoding, and produce executable code.</p><p>L2BC studies whether compact language models can learn that process from rewards based on checks of the program and its output. The goal is a model that internalizes the workflow and produces a complete program in one generation.</p></div></section>
+  <section class="method-strip" aria-label="How L2BC trains a model"><p class="eyebrow">FROM A REQUEST TO VERIFIED FEEDBACK</p><div class="method-steps"><div><span>01 / GENERATE</span><h3>Question + data</h3><p>A compact Qwen model generates candidate visualization programs from a structured workflow.</p></div><div><span>02 / EXECUTE</span><h3>Run the program</h3><p>The program executes, renders a chart, and exposes an output that can be checked.</p></div><div><span>03 / VERIFY</span><h3>Inspect the result</h3><p>Rules reconstruct the chart’s type and encoded data, then compare them with the ground-truth specification.</p></div><div><span>04 / LEARN</span><h3>Update the model</h3><p>GRPO and LoRA use the reward to update the policy. Verified performance also adapts the training controls.</p></div></div><p class="method-note">This loop happens during training. The learned policy produces the visualization program in a single generation at inference.</p></section>
+  <section class="article-block" aria-labelledby="built-title"><h2 id="built-title">What I developed</h2><div><ul><li><strong>Rewards grounded in executable checks.</strong> Chart verification checks execution, chart type, and encoded data against a specification. Separate code checks evaluate adherence to the structured workflow.</li><li><strong>Adaptive reinforcement fine-tuning.</strong> A custom TRL/GRPO trainer with LoRA uses a verified performance signal, called comfortability, to control sampling temperature, learning rate, and reward scaling.</li><li><strong>Experiments that explain the result.</strong> Component ablations and analysis of seen and unseen tasks examine what the model learns, how model capacity changes the result, and where verification leaves gaps.</li></ul></div></section>
+  <section class="article-block" aria-labelledby="findings-title"><h2 id="findings-title">What the work showed</h2><div><p>The best compact-model configurations matched or exceeded larger agentic visualization baselines on VisEval, using limited training data and one generation at inference. This showed that rule-based rewards can teach useful visualization behavior without a learned reward model or an LLM judge in the training loop.</p><p>The adaptive controls were more useful at the smaller model scale; their benefit was inconclusive for the larger model. The research also made failures easier to diagnose: named checks reveal execution errors, incorrect data, and aspects the reward never taught.</p><div class="article-callout"><p><strong>The central lesson:</strong> reliable feedback depends on what can be verified. A model can learn the checks it receives and still miss requirements outside that specification.</p></div></div></section>
+  <section class="article-block" aria-labelledby="scope-title"><h2 id="scope-title">Research perspective</h2><div><p>This is a completed thesis in Data Science and Artificial Intelligence at AIT. It brings together reinforcement learning, efficient LLM fine-tuning, program execution, chart parsing, and empirical model evaluation.</p><p>The experiments cover one benchmark and one model family. The work establishes a reproducible approach to verified correctness; aesthetic quality remains a separate evaluation question, and a missing rule can leave a blind spot.</p><div class="tags"><span>GRPO</span><span>LoRA</span><span>TRL</span><span>Qwen</span><span>Text-to-visualization</span><span>Reward design</span></div></div></section>
+  <div class="article-end"><p>Interested in verifiable learning or efficient language models?</p><a class="button button-primary" href="mailto:kaungnyolwin@gmail.com?subject=L2BC%20research">Discuss the research <span aria-hidden="true">↗</span></a></div>
+</div>
+</main>
+<footer class="site-footer container"><p>© <span data-year>2026</span> Kaung Nyo Lwin</p><div><a href="https://github.com/Kaung-Nyo-Lwin">GitHub ↗</a><a href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145/">LinkedIn ↗</a><a href="#main">Back to top ↑</a></div></footer>
+</body>
+</html>
