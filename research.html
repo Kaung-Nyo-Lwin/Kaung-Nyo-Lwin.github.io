@@ -1,55 +1,167 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#f8f9fc">
-<title>L2BC — Verifiable Reinforcement Learning | Kaung Nyo Lwin</title>
-<meta name="description" content="L2BC is Kaung Nyo Lwin's completed master's thesis: teaching compact language models to generate data visualizations through rule-based verification and adaptive reinforcement learning.">
-<link rel="canonical" href="https://kaung-nyo-lwin.github.io/research.html">
-<meta property="og:type" content="article">
-<meta property="og:title" content="L2BC — Learning with verifiable rewards">
-<meta property="og:description" content="A completed master's thesis on reinforcement learning for data visualization, by Kaung Nyo Lwin.">
-<meta property="og:url" content="https://kaung-nyo-lwin.github.io/research.html">
-<meta property="og:image" content="https://kaung-nyo-lwin.github.io/assets/social-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kaung Nyo Lwin — AI Engineer &amp; Researcher. Computer vision, language models, and software systems.">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-<link rel="preload" href="assets/fonts/lato-regular.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="assets/fonts/lato-bold.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="styles.css">
-<script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L2BC: small models, verifiable rewards | Kaung Nyo Lwin</title>
+  <meta name="description" content="L2BC, Kaung Nyo Lwin's master's thesis: reinforcement fine-tuning for text-to-visualization with rule-based rewards over parsed chart schemas. A 3B model beats 7B agentic pipelines in one generation, with no LLM judge.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b1016" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://kaung-nyo-lwin.github.io/research.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="L2BC: small models, verifiable rewards">
+  <meta property="og:description" content="Reinforcement fine-tuning for text-to-visualization with rule-based rewards, no LLM or VLM judge. A master's thesis by Kaung Nyo Lwin.">
+  <meta property="og:url" content="https://kaung-nyo-lwin.github.io/research.html">
+  <meta property="og:image" content="https://kaung-nyo-lwin.github.io/assets/social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kaung Nyo Lwin, AI Engineer and Researcher: computer vision, LLM fine-tuning and RL, biometrics and fairness, MLOps on Google Cloud.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","headline":"L2BC: Reinforcement Fine-Tuning for Text-to-Visualization with Rule-Based Rewards over Parsed Chart Schemas","author":[{"@type":"Person","name":"Kaung Nyo Lwin","url":"https://kaung-nyo-lwin.github.io/"},{"@type":"Person","name":"Todsavad Tangtortan"},{"@type":"Person","name":"Chaklam Silpasuwanchai"}],"sourceOrganization":{"@type":"CollegeOrUniversity","name":"Asian Institute of Technology"},"datePublished":"2026","creativeWorkStatus":"Manuscript in preparation","about":["Reinforcement learning","Text-to-visualization","GRPO","LoRA","Verifiable rewards"]}</script>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5.5-5.5M19 12l-5.5 5.5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.2"/><path d="m3.8 7 8.2 6.2L20.2 7"/></symbol>
+</svg>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="./" aria-label="Kaung Nyo Lwin, home"><img src="assets/favicon.svg" width="32" height="32" alt=""><span>Kaung Nyo Lwin<span class="brand-sub">AI Engineer &amp; Researcher</span></span></a>
+    <a class="brand" href="./" aria-label="Kaung Nyo Lwin, home"><img src="assets/favicon.svg" width="34" height="34" alt=""><span><span class="brand-name">Kaung Nyo Lwin</span><span class="brand-sub">AI Engineer &amp; Researcher</span></span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span>Menu</span><span class="menu-lines" aria-hidden="true"></span></button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-      <a href="index.html#work">Work</a><a href="index.html#research">Research</a><a href="index.html#experience">Experience</a><a href="index.html#about">About</a><a class="nav-contact" href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="./#work">Work</a>
+      <a href="./#research" aria-current="page">Research</a>
+      <a href="./#experience">Experience</a>
+      <a href="./#skills">Skills</a>
+      <a href="./#contact">Contact</a>
+      <a class="button button-quiet button-small" href="assets/Kaung_Nyo_Lwin_CV.pdf" download>CV <svg class="icon"><use href="#i-download"/></svg></a>
     </nav>
   </div>
 </header>
+
 <main id="main">
-<header class="article-hero container">
-  <a class="breadcrumb" href="index.html#research"><span aria-hidden="true">←</span> Back to portfolio</a>
-  <p class="eyebrow">L2BC · LEARN TO BE COOL</p>
-  <h1>Teaching small models<br>with <em>verifiable rewards.</em></h1>
-  <p class="article-lead">A reinforcement learning framework that turns questions and tables into executable visualization code—and checks what the chart actually says.</p>
-  <div class="article-meta"><span>Completed master’s thesis</span><span>Asian Institute of Technology</span><span>Reinforcement learning · Generative AI</span></div>
-</header>
-<div class="article-body container">
-  <section class="article-block" aria-labelledby="question-title"><h2 id="question-title">The problem</h2><div><p>A chart can render successfully and still show the wrong data. Generating a useful visualization requires a language model to select and join tables, transform values, choose the right visual encoding, and produce executable code.</p><p>L2BC studies whether compact language models can learn that process from rewards based on checks of the program and its output. The goal is a model that internalizes the workflow and produces a complete program in one generation.</p></div></section>
-  <section class="method-strip" aria-label="How L2BC trains a model"><p class="eyebrow">FROM A REQUEST TO VERIFIED FEEDBACK</p><div class="method-steps"><div><span>01 / GENERATE</span><h3>Question + data</h3><p>A compact Qwen model generates candidate visualization programs from a structured workflow.</p></div><div><span>02 / EXECUTE</span><h3>Run the program</h3><p>The program executes, renders a chart, and exposes an output that can be checked.</p></div><div><span>03 / VERIFY</span><h3>Inspect the result</h3><p>Rules reconstruct the chart’s type and encoded data, then compare them with the ground-truth specification.</p></div><div><span>04 / LEARN</span><h3>Update the model</h3><p>GRPO and LoRA use the reward to update the policy. Verified performance also adapts the training controls.</p></div></div><p class="method-note">This loop happens during training. The learned policy produces the visualization program in a single generation at inference.</p></section>
-  <section class="article-block" aria-labelledby="built-title"><h2 id="built-title">What I developed</h2><div><ul><li><strong>Rewards grounded in executable checks.</strong> Chart verification checks execution, chart type, and encoded data against a specification. Separate code checks evaluate adherence to the structured workflow.</li><li><strong>Adaptive reinforcement fine-tuning.</strong> A custom TRL/GRPO trainer with LoRA uses a verified performance signal, called comfortability, to control sampling temperature, learning rate, and reward scaling.</li><li><strong>Experiments that explain the result.</strong> Component ablations and analysis of seen and unseen tasks examine what the model learns, how model capacity changes the result, and where verification leaves gaps.</li></ul></div></section>
-  <section class="article-block" aria-labelledby="findings-title"><h2 id="findings-title">What the work showed</h2><div><p>The best compact-model configurations matched or exceeded larger agentic visualization baselines on VisEval, using limited training data and one generation at inference. This showed that rule-based rewards can teach useful visualization behavior without a learned reward model or an LLM judge in the training loop.</p><p>The adaptive controls were more useful at the smaller model scale; their benefit was inconclusive for the larger model. The research also made failures easier to diagnose: named checks reveal execution errors, incorrect data, and aspects the reward never taught.</p><div class="article-callout"><p><strong>The central lesson:</strong> reliable feedback depends on what can be verified. A model can learn the checks it receives and still miss requirements outside that specification.</p></div></div></section>
-  <section class="article-block" aria-labelledby="scope-title"><h2 id="scope-title">Research perspective</h2><div><p>This is a completed thesis in Data Science and Artificial Intelligence at AIT. It brings together reinforcement learning, efficient LLM fine-tuning, program execution, chart parsing, and empirical model evaluation.</p><p>The experiments cover one benchmark and one model family. The work establishes a reproducible approach to verified correctness; aesthetic quality remains a separate evaluation question, and a missing rule can leave a blind spot.</p><div class="tags"><span>GRPO</span><span>LoRA</span><span>TRL</span><span>Qwen</span><span>Text-to-visualization</span><span>Reward design</span></div></div></section>
-  <div class="article-end"><p>Interested in verifiable learning or efficient language models?</p><a class="button button-primary" href="mailto:kaungnyolwin@gmail.com?subject=L2BC%20research">Discuss the research <span aria-hidden="true">↗</span></a></div>
-</div>
+  <header class="container article-hero">
+    <a class="breadcrumb" href="./#research"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>Back to the portfolio</a>
+    <p class="kicker hang"><span class="node" aria-hidden="true"></span>Research · Master’s thesis</p>
+    <h1>L2BC: small models, verifiable rewards.</h1>
+    <p class="article-lede">A reinforcement fine-tuning framework that teaches compact code models to turn a question and its tables into a correct chart in one generation. Every reward comes from rules that execute the program and check what the chart actually shows. No LLM or VLM judge is involved.</p>
+    <ul class="meta-chips" aria-label="About this work"><li>Asian Institute of Technology</li><li>2026</li><li>Reinforcement learning</li><li>Text-to-visualization</li></ul>
+  </header>
+
+  <article class="container article">
+    <section class="article-section" aria-labelledby="problem-title">
+      <h2 id="problem-title">The problem</h2>
+      <div>
+        <p>A chart can render without errors and still show the wrong data. To get it right, a model has to select and join tables, transform values, choose an encoding, and write code that runs.</p>
+        <p>Reinforcement learning has reached text-to-visualization, but with rewards from learned reward models or from LLM and VLM judges. A judged reward makes a policy only as correct as its judge can recognise, and its scores are hard to reproduce or audit. L2BC asks whether the reward can come from verification instead.</p>
+      </div>
+    </section>
+
+    <section class="article-section" aria-labelledby="method-title">
+      <h2 id="method-title">How it trains</h2>
+      <div>
+        <p>L2BC fine-tunes Qwen2.5-Coder 1.5B and 3B with GRPO and LoRA adapters, using the TRL trainer. A system prompt asks for the whole procedure in one pass, as a program with seven commented sections, from imports and data loading to display.</p>
+        <ol class="steps">
+          <li class="step"><span class="step-index">01 / GENERATE</span><h3>Sample programs</h3><p>For each question and its tables, the policy samples a group of candidate visualization programs.</p></li>
+          <li class="step"><span class="step-index">02 / EXECUTE</span><h3>Run and render</h3><p>Each program runs and renders its chart, or fails. Execution failures are part of the signal.</p></li>
+          <li class="step"><span class="step-index">03 / VERIFY</span><h3>Parse and check</h3><p>Rules parse the chart back into a schema of type and encoded data and check it against the ground truth. A second rule checks the program against the workflow.</p></li>
+          <li class="step"><span class="step-index">04 / LEARN</span><h3>Update and adapt</h3><p>Group-relative advantages update the policy. The verified reward’s expectation, called comfortability, sets the next epoch’s temperature, learning rate and reward shape.</p></li>
+        </ol>
+        <p class="callout">Because the reward is verified, its expectation estimates the policy’s actual correctness, not a judge’s opinion of it. That is what makes it safe to steer training with.</p>
+      </div>
+    </section>
+
+    <section class="article-section" aria-labelledby="results-title">
+      <h2 id="results-title">Results</h2>
+      <div>
+        <p>Trained on 192 VisEval queries with no judge in the loop, the best 3B configuration beats agentic pipelines built on a 7B model in a single generation. The best 1.5B configuration reaches parity with them.</p>
+        <figure class="chart" data-chart style="margin-top:22px">
+          <figcaption><p class="chart-title">Pass rate on VisEval in a single generation</p><p class="chart-sub">Share of queries whose chart is valid and correct. Best configuration per system.</p></figcaption>
+          <ul class="legend"><li><span class="swatch s-a"></span>L2BC · 3B, rule-verified rewards</li><li><span class="swatch s-b"></span>Best 7B agentic baseline</li></ul>
+          <div class="plot">
+            <div class="gridlines" aria-hidden="true"><span style="--x:0"></span><span style="--x:25"></span><span style="--x:50"></span><span style="--x:75"></span><span style="--x:100"></span></div>
+            <div class="bar-group" role="group" aria-label="Single-table queries">
+              <p class="bar-cat">Single-table queries</p>
+              <div class="bar-row" style="--v:67.97"><span class="bar s-a" tabindex="0" role="img" aria-label="L2BC 3B, single-table: 67.97%" data-value="67.97%" data-series="L2BC · 3B" data-detail="Single-table queries"></span><span class="bar-value" aria-hidden="true">67.97%</span></div>
+              <div class="bar-row" style="--v:59.87"><span class="bar s-b" tabindex="0" role="img" aria-label="Best 7B agentic baseline, nvAgent, single-table: 59.87%" data-value="59.87%" data-series="nvAgent · 7B" data-detail="Single-table queries"></span><span class="bar-value" aria-hidden="true">59.87%</span></div>
+            </div>
+            <div class="bar-group" role="group" aria-label="Multi-table queries">
+              <p class="bar-cat">Multi-table queries</p>
+              <div class="bar-row" style="--v:59.26"><span class="bar s-a" tabindex="0" role="img" aria-label="L2BC 3B, multi-table: 59.26%" data-value="59.26%" data-series="L2BC · 3B" data-detail="Multi-table queries"></span><span class="bar-value" aria-hidden="true">59.26%</span></div>
+              <div class="bar-row" style="--v:43.32"><span class="bar s-b" tabindex="0" role="img" aria-label="Best 7B agentic baseline, CoML4Vis, multi-table: 43.32%" data-value="43.32%" data-series="CoML4Vis · 7B" data-detail="Multi-table queries"></span><span class="bar-value" aria-hidden="true">43.32%</span></div>
+            </div>
+            <div class="axis" aria-hidden="true"><span style="--x:0">0</span><span style="--x:25">25</span><span style="--x:50">50</span><span style="--x:75">75</span><span style="--x:100">100%</span></div>
+          </div>
+          <details class="table-view"><summary>View as table</summary>
+            <table>
+              <caption class="visually-hidden">Pass rate on VisEval in a single generation</caption>
+              <thead><tr><th scope="col">Queries</th><th scope="col">System</th><th scope="col" class="num">Pass rate</th></tr></thead>
+              <tbody>
+                <tr><th scope="row" rowspan="2">Single-table</th><td>L2BC · 3B</td><td class="num">67.97%</td></tr>
+                <tr><td>nvAgent · 7B (best baseline)</td><td class="num">59.87%</td></tr>
+                <tr><th scope="row" rowspan="2">Multi-table</th><td>L2BC · 3B</td><td class="num">59.26%</td></tr>
+                <tr><td>CoML4Vis · 7B (best baseline)</td><td class="num">43.32%</td></tr>
+              </tbody>
+            </table>
+          </details>
+        </figure>
+        <ul class="numbers">
+          <li><b>+8.10 / +15.94</b><span>points above the best 7B baselines on single- and multi-table queries, with about a third of nvAgent’s single-table invalid rate (4.40% vs 11.71%).</span></li>
+          <li><b>58.55%</b><span>single-table pass rate at 1.5B, within 1.32 points of nvAgent with a fifth of the parameters; 43.28% multi-table, level with CoML4Vis.</span></li>
+          <li><b>31.20% → 59.03%</b><span>single-table pass rate of the 3B model from base to verified training, mostly by removing execution failures.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-section" aria-labelledby="findings-title">
+      <h2 id="findings-title">What the work showed</h2>
+      <div>
+        <ul>
+          <li><strong>No LLM is needed anywhere in the reward.</strong> A reward that consults only the human-curated chart specification already beats every 7B baseline at 3B after five epochs (66.84% single-table, 46.90% multi-table).</li>
+          <li><strong>Comfortability matters at 1.5B.</strong> Removing any dynamic mechanism lowers every reward component. Standard GRPO with static hyperparameters reaches 42.47% validation legality, against 63.65% with comfortability. At 3B the effect is inconclusive.</li>
+          <li><strong>Verification shows where it stops.</strong> The decomposed reward exposes the one aspect it never rewards, sort order, whose violations grow on unseen tasks. A model learns the checks it receives and can still miss what the specification leaves out.</li>
+        </ul>
+        <p class="callout"><strong>The central trade.</strong> A verifier swaps the judge’s ceiling for a specification ceiling. It is exact where a ground-truth specification exists and blind where none does, so aesthetics still belong to a judge. Verified correctness plus a judged aesthetic term is the natural hybrid.</p>
+      </div>
+    </section>
+
+    <section class="article-section" aria-labelledby="limits-title">
+      <h2 id="limits-title">Limits</h2>
+      <div>
+        <ul>
+          <li>No judge-based reward was trained under identical conditions, so rule-based rewards are presented as a verifiable alternative, not one shown to dominate judges.</li>
+          <li>Chart rewards need human-curated specifications, and about 14–15% of queries still fail on data correctness.</li>
+          <li>One benchmark, one model family at 1.5B and 3B, and one run per configuration. The best configuration per scale was selected on the benchmark.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="article-section" aria-labelledby="cite-title">
+      <h2 id="cite-title">Citation</h2>
+      <div>
+        <p class="cite-block">K. N. Lwin, T. Tangtortan, C. Silpasuwanchai. <cite>L2BC: Reinforcement Fine-Tuning for Text-to-Visualization with Rule-Based Rewards over Parsed Chart Schemas.</cite> Manuscript in preparation, 2026. Asian Institute of Technology.</p>
+        <ul class="tags" aria-label="Topics" style="margin-top:18px"><li>GRPO</li><li>LoRA</li><li>TRL</li><li>Qwen2.5-Coder</li><li>Reward design</li><li>Text-to-visualization</li></ul>
+      </div>
+    </section>
+
+    <div class="article-end">
+      <p>Interested in verifiable rewards or efficient language models?</p>
+      <a class="button button-primary" href="mailto:kaungnyolwin@gmail.com?subject=L2BC%20research"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Discuss the research</a>
+    </div>
+  </article>
 </main>
-<footer class="site-footer container"><p>© <span data-year>2026</span> Kaung Nyo Lwin</p><div><a href="https://github.com/Kaung-Nyo-Lwin">GitHub ↗</a><a href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145/">LinkedIn ↗</a><a href="#main">Back to top ↑</a></div></footer>
+
+<footer class="container site-footer">
+  <p>© <span data-year>2026</span> Kaung Nyo Lwin · Pathum Thani, Thailand</p>
+  <nav aria-label="Footer"><a href="./">Portfolio</a><a href="https://github.com/Kaung-Nyo-Lwin">GitHub</a><a href="https://www.linkedin.com/in/kaung-nyo-lwin-31510b145/">LinkedIn</a><a href="#main">Back to top ↑</a></nav>
+</footer>
 </body>
 </html>

@@ -1,31 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
-  <title id="title">Kaung Nyo Lwin — AI Engineer &amp; Researcher</title>
-  <desc id="description">Computer vision, language models, and software systems. From AI research to working systems.</desc>
-  <defs>
-    <style>
-      @font-face{font-family:Lato;src:url('fonts/lato-regular.woff');font-weight:400}
-      @font-face{font-family:Lato;src:url('fonts/lato-bold.woff');font-weight:700}
-      text{font-family:Lato,Arial,sans-serif}
-    </style>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#dfe5f2" stroke-width="1"/></pattern>
-  </defs>
-  <rect width="1200" height="630" fill="#f8f9fc"/>
-  <rect x="864" width="336" height="630" fill="url(#grid)"/>
-  <path d="M904 472V254h190V140" fill="none" stroke="#b7c6ed" stroke-width="2"/>
-  <path d="M922 422h153V276H963V182" fill="none" stroke="#304fc4" stroke-width="2" stroke-dasharray="5 8"/>
-  <rect x="914" y="240" width="150" height="150" rx="24" fill="#304fc4"/>
-  <path d="M953 277v76m0-36 55-40m-55 40 58 36m9-76v76" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="1094" cy="140" r="7" fill="#304fc4"/>
-  <circle cx="904" cy="472" r="7" fill="#304fc4"/>
-  <text x="72" y="90" fill="#304fc4" font-size="16" font-weight="700" letter-spacing="3">KAUNG NYO LWIN</text>
-  <text x="68" y="220" fill="#182133" font-size="77" font-weight="700" letter-spacing="-3">AI Engineer</text>
-  <text x="68" y="315" fill="#304fc4" font-size="77" font-weight="700" letter-spacing="-3">&amp; Researcher</text>
-  <text x="72" y="381" fill="#5c6576" font-size="27">From AI research to working systems.</text>
-  <path d="M72 449H807" stroke="#d6deed"/>
-  <text x="72" y="490" fill="#465575" font-size="18">Computer vision</text>
-  <circle cx="228" cy="484" r="2" fill="#8a9abe"/>
-  <text x="245" y="490" fill="#465575" font-size="18">Language models</text>
-  <circle cx="408" cy="484" r="2" fill="#8a9abe"/>
-  <text x="425" y="490" fill="#465575" font-size="18">Software systems</text>
-  <text x="72" y="562" fill="#304fc4" font-size="19">kaung-nyo-lwin.github.io</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Kaung Nyo Lwin, AI Engineer and Researcher</title>
+<defs>
+<style>
+@font-face{font-family:"IBM Plex Sans";src:url("fonts/ibm-plex-sans-400.woff2") format("woff2");font-weight:400}
+@font-face{font-family:"IBM Plex Sans";src:url("fonts/ibm-plex-sans-500.woff2") format("woff2");font-weight:500}
+@font-face{font-family:"IBM Plex Sans";src:url("fonts/ibm-plex-sans-600.woff2") format("woff2");font-weight:600}
+svg{--accent:#0A7587;--accent2:#3949B5;--paper:#fff}
+text{font-family:"IBM Plex Sans",Arial,sans-serif}
+.kicker{font-size:21px;font-weight:600;letter-spacing:3px;fill:#0A7587}
+.name{font-size:84px;font-weight:500;letter-spacing:-2.6px;fill:#16202C}
+.lede{font-size:29px;font-weight:400;fill:#2A3341}
+.pill{font-size:20px;font-weight:500;fill:#0A7587}
+.url{font-size:23px;font-weight:500;fill:#0A7587}
+.motif .l0{--c:var(--accent)}.motif .l1{--c:color-mix(in oklab,var(--accent) 75%,var(--accent2))}
+.motif .l2{--c:color-mix(in oklab,var(--accent) 50%,var(--accent2))}.motif .l3{--c:color-mix(in oklab,var(--accent) 25%,var(--accent2))}
+.motif .l4{--c:var(--accent2)}
+.motif-edges path{fill:none;stroke:var(--c);stroke-width:1}
+.motif-nodes circle{fill:#fff;stroke:color-mix(in srgb,var(--c) 62%,#fff);stroke-width:1.6}
+.motif-path{fill:none;stroke:url(#motif-grad);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.motif-active .halo{fill:var(--c);opacity:.14}.motif-active .dot{fill:var(--c);stroke:#fff;stroke-width:2}
+</style>
+<linearGradient id="band" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A7587"/><stop offset="1" stop-color="#3949B5"/></linearGradient>
+<radialGradient id="glow" cx="920" cy="290" r="330" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0A7587" stop-opacity=".12"/><stop offset=".6" stop-color="#3949B5" stop-opacity=".05"/><stop offset="1" stop-color="#3949B5" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#fff"/>
+<rect width="1200" height="630" fill="url(#glow)"/>
+<rect width="1200" height="10" fill="url(#band)"/>
+<circle cx="88" cy="118" r="13" fill="#0A7587" opacity=".16"/><circle cx="88" cy="118" r="7" fill="#0A7587"/>
+<text x="112" y="125" class="kicker">AI ENGINEER &amp; RESEARCHER</text>
+<text x="76" y="232" class="name">Kaung Nyo Lwin</text>
+<text x="80" y="298" class="lede">Computer vision and language-model systems,</text>
+<text x="80" y="338" class="lede">from first experiment to production.</text>
+<rect x="80.0" y="394" width="183.8" height="38" rx="19" fill="#E1F0F2"/><text x="171.9" y="419.5" text-anchor="middle" class="pill">Computer Vision</text><rect x="273.8" y="394" width="230.3" height="38" rx="19" fill="#E1F0F2"/><text x="388.9" y="419.5" text-anchor="middle" class="pill">LLM Fine-Tuning &amp; RL</text><rect x="80.0" y="442" width="232.3" height="38" rx="19" fill="#E1F0F2"/><text x="196.1" y="467.5" text-anchor="middle" class="pill">Biometrics &amp; Fairness</text><rect x="322.3" y="442" width="248.9" height="38" rx="19" fill="#E1F0F2"/><text x="446.7" y="467.5" text-anchor="middle" class="pill">MLOps on Google Cloud</text>
+<path d="M80 540H640" stroke="#D6DCE4"/>
+<text x="80" y="580" class="url">kaung-nyo-lwin.github.io</text>
+<svg class="motif" x="700" y="130" width="440" height="320" viewBox="0 0 440 320"><defs><linearGradient id="motif-grad" x1="30" y1="0" x2="410" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:var(--accent)"/><stop offset="1" style="stop-color:var(--accent2)"/></linearGradient></defs><g class="motif-edges"><path class="l0" d="M30 206L125 252" opacity="0.20"/><path class="l0" d="M30 206L125 206" opacity="0.29"/><path class="l0" d="M30 206L125 160" opacity="0.27"/><path class="l0" d="M30 206L125 114" opacity="0.14"/><path class="l0" d="M30 206L125 68" opacity="0.16"/><path class="l0" d="M30 160L125 252" opacity="0.20"/><path class="l0" d="M30 160L125 206" opacity="0.31"/><path class="l0" d="M30 160L125 160" opacity="0.23"/><path class="l0" d="M30 160L125 114" opacity="0.18"/><path class="l0" d="M30 160L125 68" opacity="0.25"/><path class="l0" d="M30 114L125 252" opacity="0.21"/><path class="l0" d="M30 114L125 206" opacity="0.22"/><path class="l0" d="M30 114L125 160" opacity="0.36"/><path class="l0" d="M30 114L125 114" opacity="0.23"/><path class="l0" d="M30 114L125 68" opacity="0.27"/><path class="l1" d="M125 252L220 275" opacity="0.34"/><path class="l1" d="M125 252L220 229" opacity="0.28"/><path class="l1" d="M125 252L220 183" opacity="0.11"/><path class="l1" d="M125 252L220 137" opacity="0.15"/><path class="l1" d="M125 252L220 91" opacity="0.21"/><path class="l1" d="M125 252L220 45" opacity="0.15"/><path class="l1" d="M125 206L220 275" opacity="0.27"/><path class="l1" d="M125 206L220 229" opacity="0.23"/><path class="l1" d="M125 206L220 183" opacity="0.14"/><path class="l1" d="M125 206L220 137" opacity="0.10"/><path class="l1" d="M125 206L220 91" opacity="0.23"/><path class="l1" d="M125 206L220 45" opacity="0.24"/><path class="l1" d="M125 160L220 275" opacity="0.32"/><path class="l1" d="M125 160L220 229" opacity="0.28"/><path class="l1" d="M125 160L220 183" opacity="0.27"/><path class="l1" d="M125 160L220 137" opacity="0.29"/><path class="l1" d="M125 160L220 91" opacity="0.15"/><path class="l1" d="M125 160L220 45" opacity="0.21"/><path class="l1" d="M125 114L220 275" opacity="0.27"/><path class="l1" d="M125 114L220 229" opacity="0.25"/><path class="l1" d="M125 114L220 183" opacity="0.11"/><path class="l1" d="M125 114L220 137" opacity="0.17"/><path class="l1" d="M125 114L220 91" opacity="0.24"/><path class="l1" d="M125 114L220 45" opacity="0.31"/><path class="l1" d="M125 68L220 275" opacity="0.16"/><path class="l1" d="M125 68L220 229" opacity="0.21"/><path class="l1" d="M125 68L220 183" opacity="0.31"/><path class="l1" d="M125 68L220 137" opacity="0.23"/><path class="l1" d="M125 68L220 91" opacity="0.35"/><path class="l1" d="M125 68L220 45" opacity="0.15"/><path class="l2" d="M220 275L315 252" opacity="0.36"/><path class="l2" d="M220 275L315 206" opacity="0.10"/><path class="l2" d="M220 275L315 160" opacity="0.15"/><path class="l2" d="M220 275L315 114" opacity="0.14"/><path class="l2" d="M220 275L315 68" opacity="0.25"/><path class="l2" d="M220 229L315 252" opacity="0.15"/><path class="l2" d="M220 229L315 206" opacity="0.13"/><path class="l2" d="M220 229L315 160" opacity="0.34"/><path class="l2" d="M220 229L315 114" opacity="0.12"/><path class="l2" d="M220 229L315 68" opacity="0.14"/><path class="l2" d="M220 183L315 252" opacity="0.19"/><path class="l2" d="M220 183L315 206" opacity="0.16"/><path class="l2" d="M220 183L315 160" opacity="0.34"/><path class="l2" d="M220 183L315 114" opacity="0.35"/><path class="l2" d="M220 183L315 68" opacity="0.14"/><path class="l2" d="M220 137L315 252" opacity="0.18"/><path class="l2" d="M220 137L315 206" opacity="0.31"/><path class="l2" d="M220 137L315 160" opacity="0.23"/><path class="l2" d="M220 137L315 114" opacity="0.18"/><path class="l2" d="M220 137L315 68" opacity="0.31"/><path class="l2" d="M220 91L315 252" opacity="0.30"/><path class="l2" d="M220 91L315 206" opacity="0.14"/><path class="l2" d="M220 91L315 160" opacity="0.10"/><path class="l2" d="M220 91L315 114" opacity="0.36"/><path class="l2" d="M220 91L315 68" opacity="0.25"/><path class="l2" d="M220 45L315 252" opacity="0.21"/><path class="l2" d="M220 45L315 206" opacity="0.14"/><path class="l2" d="M220 45L315 160" opacity="0.26"/><path class="l2" d="M220 45L315 114" opacity="0.34"/><path class="l2" d="M220 45L315 68" opacity="0.33"/><path class="l3" d="M315 252L410 206" opacity="0.33"/><path class="l3" d="M315 252L410 160" opacity="0.23"/><path class="l3" d="M315 252L410 114" opacity="0.24"/><path class="l3" d="M315 206L410 206" opacity="0.13"/><path class="l3" d="M315 206L410 160" opacity="0.12"/><path class="l3" d="M315 206L410 114" opacity="0.30"/><path class="l3" d="M315 160L410 206" opacity="0.17"/><path class="l3" d="M315 160L410 160" opacity="0.34"/><path class="l3" d="M315 160L410 114" opacity="0.13"/><path class="l3" d="M315 114L410 206" opacity="0.32"/><path class="l3" d="M315 114L410 160" opacity="0.22"/><path class="l3" d="M315 114L410 114" opacity="0.17"/><path class="l3" d="M315 68L410 206" opacity="0.27"/><path class="l3" d="M315 68L410 160" opacity="0.17"/><path class="l3" d="M315 68L410 114" opacity="0.18"/></g><path class="motif-path" d="M30 160L125 206L220 137L315 160L410 160" pathLength="100"/><g class="motif-nodes"><circle class="l0" cx="30" cy="206" r="5.5"/><circle class="l0" cx="30" cy="114" r="5.5"/><circle class="l1" cx="125" cy="252" r="5.5"/><circle class="l1" cx="125" cy="160" r="5.5"/><circle class="l1" cx="125" cy="114" r="5.5"/><circle class="l1" cx="125" cy="68" r="5.5"/><circle class="l2" cx="220" cy="275" r="5.5"/><circle class="l2" cx="220" cy="229" r="5.5"/><circle class="l2" cx="220" cy="183" r="5.5"/><circle class="l2" cx="220" cy="91" r="5.5"/><circle class="l2" cx="220" cy="45" r="5.5"/><circle class="l3" cx="315" cy="252" r="5.5"/><circle class="l3" cx="315" cy="206" r="5.5"/><circle class="l3" cx="315" cy="114" r="5.5"/><circle class="l3" cx="315" cy="68" r="5.5"/><circle class="l4" cx="410" cy="206" r="5.5"/><circle class="l4" cx="410" cy="114" r="5.5"/></g><g class="motif-active"><g class="l0" style="--k:0"><circle class="halo" cx="30" cy="160" r="13"/><circle class="dot" cx="30" cy="160" r="6.5"/></g><g class="l1" style="--k:1"><circle class="halo" cx="125" cy="206" r="13"/><circle class="dot" cx="125" cy="206" r="6.5"/></g><g class="l2" style="--k:2"><circle class="halo" cx="220" cy="137" r="13"/><circle class="dot" cx="220" cy="137" r="6.5"/></g><g class="l3" style="--k:3"><circle class="halo" cx="315" cy="160" r="13"/><circle class="dot" cx="315" cy="160" r="6.5"/></g><g class="l4" style="--k:4"><circle class="halo" cx="410" cy="160" r="13"/><circle class="dot" cx="410" cy="160" r="6.5"/></g></g></svg>
 </svg>

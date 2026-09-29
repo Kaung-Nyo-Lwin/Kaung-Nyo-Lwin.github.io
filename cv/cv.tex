@@ -1,0 +1,177 @@
+% Kaung Nyo Lwin -- CV (AI Engineer & Researcher)
+% Build: make        (LuaLaTeX via latexmk; output Kaung_Nyo_Lwin_CV.pdf)
+% Design lives in aicv.cls; this file holds only content.
+\documentclass{aicv}
+
+\cvname{Kaung Nyo Lwin}
+\cvtitle{AI Engineer \& Researcher}
+\cvfocus{%
+  \cvtag{Computer Vision}\cvtagsep
+  \cvtag{LLM Fine-Tuning \& RL}\cvtagsep
+  \cvtag{Biometrics \& Fairness}\cvtagsep
+  \cvtag{MLOps on GCP}}
+\cvlocation{Pathum Thani, Thailand}
+\cvphone{+66 64 832 8635}{+66648328635}
+\cvemail{kaungnyolwin@gmail.com}
+\cvweb{kaung-nyo-lwin.github.io}
+\cvgithub{Kaung-Nyo-Lwin}
+\cvlinkedin{kaung-nyo-lwin-31510b145}
+
+\hypersetup{
+  pdftitle={Kaung Nyo Lwin - AI Engineer and Researcher - CV},
+  pdfauthor={Kaung Nyo Lwin},
+  pdfsubject={Curriculum vitae: AI engineer and researcher},
+  pdfkeywords={AI Engineer, Machine Learning, Computer Vision, Deep Learning,
+    LLM, Reinforcement Learning, GRPO, LoRA, RAG, PyTorch, YOLO, OpenCV,
+    Face Anti-Spoofing, MLOps, Google Cloud, Vertex AI, BigQuery, Python},
+  pdflang={en-GB}}
+
+\begin{document}
+\makecvheader
+
+% ============================================================================
+\cvsection{Profile}
+AI engineer and researcher who takes vision and language models from experiment to production on Google Cloud, backed
+by rigorous, standards-based evaluation. At AIT I build face-liveness benchmarks for digital identity (MOSIP), calibrated
+camera measurement for driving tests and video conflict analytics for road safety. My thesis, L2BC, trains compact LLMs
+with GRPO on rule-verified rewards, letting a 3B model beat 7B agentic pipelines.
+
+% ============================================================================
+\cvsection{Experience}
+
+\begin{cventry}{Computer Vision Researcher}{Jul 2026 -- Present}
+  {Asian Institute of Technology \textperiodcentered{} MOSIP (Modular Open Source Identity Platform)}
+  {Face liveness and presentation-attack detection (PAD) for the Inji digital-identity wallet, with an APAC fairness focus}
+  \item Built a PyTorch PAD research platform (5 benchmark loaders, a 45-model open-source survey, TFLite, ONNX and Torch
+    adapters) reporting ISO/IEC 30107-3 metrics (APCER, BPCER, ACER, bootstrap CIs) with per-ethnicity fairness.
+  \item Benchmarked the Inji wallet's liveness SDK models on four PAD benchmarks (247,840 frames), uncovering
+    inverted score polarity and mismatched tensor layouts across released TFLite assets; added contract probes.
+  \item Ran 38+ controlled training runs (MobileNet, ResNet, EfficientNet), including a physically based relighting ablation;
+    a four-dataset mixture cut cross-dataset ACER by 73\% yet widened ethnic disparity from 1.6\texttimes{} to 6.7\texttimes.
+  \item Validated ISO/IEC 29794-5 (OFIQ) occlusion measures on eyewear labels (87.8\% accuracy, AUC 0.90); designing a
+    VLM-assisted occlusion detector with Grounding DINO, SAM 2 and Qwen2.5-VL.
+\end{cventry}
+
+\begin{cventry}{Computer Vision Engineer}{Jul 2026 -- Present}
+  {Asian Institute of Technology \textperiodcentered{} CDG Group}
+  {Driver Licensing Management System (DLMS): automated driving-test assessment from pole-mounted cameras}
+  \item Designed and built a human-in-the-loop vision pipeline (RTSP capture, calibration, marker tracking, rule checks,
+    scoring) that turns test-station video into metric vehicle trajectories for rule-based scoring, backed by 450+ tests.
+  \item Engineered the camera geometry (homography and PnP solvers, a two-plane ground/roof-marker model, lens fitting
+    from straight lines), reaching 1.14 mm mean (2.59 mm p95) error within 15 m on exact synthetic ground truth.
+  \item Built a fault-tolerant RTSP recorder (lossless stream copy, stall detection, auto-reconnect), camera focus control
+    over HTTP, and a browser-based studio for control points, regions of interest and scoring lines.
+\end{cventry}
+
+\begin{cventry}{Research Engineer}{Mar 2026 -- Present}
+  {Asian Institute of Technology \textperiodcentered{} Toyota Mobility Foundation (TRUST project)}
+  {Road-safety research platform combining vehicle telemetry and roadside CCTV in Bangkok}
+  \item Built the video conflict-analysis pipeline: YOLO and ByteTrack tracking, homography-based ground-plane
+    trajectories, kinematics and surrogate safety measures (TTC, PET, DRAC), BigQuery outputs and 2D map replays.
+  \item Trained a 5-class YOLO11-L road-user detector on annotated project CCTV (mAP50 0.76, mAP50-95 0.55), with
+    containerised training and batch inference on Vertex AI and Cloud Run, GCS checkpoints and a model registry.
+  \item Derived depth-zoned measurement windows from a noise analysis of 3.1M detections, extending reliable speed
+    estimates from 38 m to 70 m and acceleration events from 21 m to 54 m.
+  \item Built Poisson and negative-binomial GLM tests (exposure offsets, rate ratios, boundary sensitivity) of a warning
+    zone's effect on harsh braking over 700K telemetry pings from 21K+ vehicles.
+  \item Migrated the platform to Google Cloud: FastAPI on Cloud Run, a layered BigQuery analytics module, and
+    Terraform-managed Cloud Build, Secret Manager and storage behind the research dashboard's insight APIs.
+\end{cventry}
+
+\begin{cventry}{LLM Developer Intern}{Jul 2025 -- Oct 2025}
+  {AI Brain Lab}
+  {Generative AI for ESG reporting and financial-document question answering}
+  \item Built an ESG report-generation pipeline with LLMs and retrieval-augmented generation (RAG), and a FastAPI and
+    OpenAI API assistant answering questions over Stock Exchange of Thailand (SET) documents.
+  \item Scraped and embedded thousands of SET documents with RAPTOR tree-structured retrieval, and implemented table
+    extraction and structured parsing for PDF, Excel and CSV sources.
+\end{cventry}
+
+% ============================================================================
+\cvsection{Research \& Publications}
+
+\begin{cvskills}
+\cvskill{Research interests}{Verifiable rewards and RL for LLMs; fair, trustworthy biometrics; geometric computer vision}
+\end{cvskills}
+\vspace{1.5pt}
+
+\begin{cvcard}
+  {\cventrytitlefont L2BC: Reinforcement Fine-Tuning for Text-to-Visualization\par}
+  {\cvorgfont Master's thesis \textperiodcentered{} Asian Institute of Technology}\hfill{\cvdatefont 2026}\par
+  {\cvcontextfont L2BC (``Learn To Be Cool''): small code LLMs learn to chart data from rewards that are verified, not judged}\par
+  \begin{itemize}
+    \item Proposed, to our knowledge, the first reinforcement fine-tuning framework for text-to-visualization with a purely
+      rule-based reward: programs are executed, and their rendered charts parsed and verified against ground truth.
+    \item Turned the verified reward's expectation (``comfortability'') into a training-state signal that sets GRPO's
+      temperature, learning rate and reward shape each epoch, with no LLM or VLM judge in the loop.
+    \item Fine-tuned Qwen2.5-Coder 1.5B and 3B with LoRA and TRL on 192 VisEval queries; the 3B model reaches 67.97\%
+      single-table and 59.26\% multi-table pass rates in one pass, beating 7B agentic baselines (59.87\%, 43.32\%).
+    \item Reward decomposition and ablations (workflow structure, scale, chain-of-thought) show what verification teaches
+      and where it stops: unrewarded sort-order errors grow on unseen tasks.
+  \end{itemize}
+  \vspace{2.5pt}
+  \cvpub{K.\,N.~Lwin, T.~Tangtortan, C.~Silpasuwanchai. \textit{L2BC: Reinforcement Fine-Tuning for Text-to-Visualization
+    with Rule-Based Rewards over Parsed Chart Schemas.} Manuscript in preparation, 2026.}
+\end{cvcard}
+
+% ============================================================================
+\cvsection{Education}
+
+\cvbrief{Master of Engineering, Data Science and Artificial Intelligence}{2024 -- 2026}
+  {Asian Institute of Technology, Pathum Thani, Thailand}{}
+
+\cvbrief{Bachelor of Engineering, Avionics}{2010 -- 2015}
+  {Myanmar Aerospace Engineering University, Meiktila, Myanmar}{}
+
+% ============================================================================
+\cvsection{Technical Skills}
+
+\begin{cvskills}
+\cvskill{Machine learning}{PyTorch, Ultralytics YOLO, ONNX, TensorFlow Lite, scikit-learn, SciPy, NumPy, pandas}
+\cvskill{LLMs \& generative AI}{GRPO, PPO, DPO, LoRA, Hugging Face Transformers, TRL, RAG, LlamaIndex, LangChain,
+  OpenAI API, FAISS, pgvector, agents and MCP}
+\cvskill{Computer vision}{Object detection, multi-object tracking (ByteTrack), OpenCV, camera calibration (homography, PnP,
+  lens distortion), face anti-spoofing, OFIQ}
+\cvskill{Evaluation \& statistics}{ISO/IEC 30107-3, fairness (ISO/IEC 19795-10), bootstrap CIs, GLMs (statsmodels), ablations}
+\cvskill{MLOps \& cloud}{Google Cloud (Vertex AI, Cloud Run, Cloud Build, BigQuery, Cloud Storage), Terraform, Docker,
+  FastAPI, MLflow, pytest, Git}
+\cvskill{Data \& languages}{Python, SQL, PostgreSQL, MySQL, SQL Server, MongoDB, Shapely, Power BI, Odoo, PowerShell}
+\end{cvskills}
+
+% ============================================================================
+\cvsection{Selected Projects}
+
+\begin{itemize}[topsep=0pt]
+  \item \textbf{Software Documentation Bot.} LLM pipeline that drafts software documentation for business users,
+    reducing manual hand-offs between developers and stakeholders (Python, LlamaIndex, Flask).
+  \item \textbf{Job Automation Risk Prediction.} Machine-learning model scoring each occupation's automation risk, served
+    in an interactive dashboard with career recommendations (scikit-learn, Django).
+\end{itemize}
+
+% ============================================================================
+\cvsection{Additional Experience}
+
+\cvrole{Solutions Architect (Contract)}{MA'HAR EMPEROR (Audit Firm)}{Aug 2026 -- Present}
+  {Own end-to-end delivery of a project management and tracking system on Odoo 18 and PostgreSQL: service-hour planning,
+  timesheets, rate and margin resolution, role-based access and management reporting.}
+
+\cvrole{Senior Business Analyst}{KEYfields}{Feb 2023 -- Jul 2024}
+  {Engineered SQL stored procedures and data models for SaaS accounting and logistics products; automated deployments and
+  database backups with Python and PowerShell, cutting processing errors and runtime by 50\%.}
+
+\cvrole{Asset Management Analyst, promoted to Senior}{Telecom International Myanmar}{Jun 2017 -- Sep 2020}
+  {Built Excel VBA automation and KPI dashboards for 100+ asset types, reducing manual reporting by 40\%; coordinated
+  rollouts across 700+ telecom sites at 98\% KPI compliance.}
+
+\cvrole{Telecom Installation Engineer}{Ericsson Myanmar}{Feb 2016 -- May 2016}{}
+
+% ============================================================================
+\cvsection{Certifications \& Languages}
+
+\begin{cvskills}
+\cvskill{Certifications}{DeepLearning.AI: Deep Learning and Machine Learning Specializations, TensorFlow Developer,
+  Mathematics for Machine Learning and Data Science. IBM: Data Science, Data Analyst.}
+\cvskill{Languages}{Myanmar (native), English (C1)}
+\end{cvskills}
+
+\end{document}

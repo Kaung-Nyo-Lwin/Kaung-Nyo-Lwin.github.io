@@ -2,6 +2,7 @@
 
 document.documentElement.classList.add('has-js');
 
+// Mobile navigation
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#site-nav');
 function closeMenu() {
@@ -27,35 +28,10 @@ if (menuButton && navigation) {
   document.addEventListener('click', event => {
     if (!event.target.closest('.site-header')) closeMenu();
   });
-  window.matchMedia('(min-width: 821px)').addEventListener('change', closeMenu);
+  window.matchMedia('(min-width: 861px)').addEventListener('change', closeMenu);
 }
 
-const tabs = Array.from(document.querySelectorAll('.studio-tab'));
-function selectTab(tab, focus = false) {
-  tabs.forEach(item => {
-    const selected = item === tab;
-    item.setAttribute('aria-selected', String(selected));
-    item.tabIndex = selected ? 0 : -1;
-    const panel = document.getElementById(item.getAttribute('aria-controls'));
-    if (panel) panel.hidden = !selected;
-  });
-  if (focus) tab.focus();
-}
-tabs.forEach((tab, index) => {
-  tab.addEventListener('click', () => selectTab(tab));
-  tab.addEventListener('keydown', event => {
-    let next;
-    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
-    if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = tabs.length - 1;
-    if (next !== undefined) {
-      event.preventDefault();
-      selectTab(tabs[next], true);
-    }
-  });
-});
-
+// Copy email
 const copyButton = document.querySelector('.copy-email');
 if (copyButton) {
   copyButton.addEventListener('click', async () => {
@@ -68,11 +44,55 @@ if (copyButton) {
     }
   });
 }
+
 document.querySelectorAll('[data-year]').forEach(element => {
   element.textContent = String(new Date().getFullYear());
 });
 
-// Follow the visible section; anchor links remain usable without JavaScript.
+// Chart tooltips: value first, then series and category. Every value is also a
+// direct label and in the table view, so the tooltip only adds the system name.
+document.querySelectorAll('[data-chart]').forEach(chart => {
+  const tip = document.createElement('div');
+  tip.className = 'tooltip';
+  tip.hidden = true;
+  tip.setAttribute('aria-hidden', 'true');
+  const value = document.createElement('strong');
+  const series = document.createElement('span');
+  const key = document.createElement('span');
+  const name = document.createElement('span');
+  const detail = document.createElement('span');
+  series.style.display = 'block';
+  detail.style.display = 'block';
+  series.append(key, name);
+  tip.append(value, series, detail);
+  chart.append(tip);
+
+  function show(bar) {
+    value.textContent = bar.dataset.value;
+    name.textContent = bar.dataset.series;
+    detail.textContent = bar.dataset.detail;
+    key.className = 'key ' + ([...bar.classList].find(c => c.startsWith('s-')) || '');
+    tip.hidden = false;
+    const box = chart.getBoundingClientRect();
+    const mark = bar.getBoundingClientRect();
+    const half = tip.offsetWidth / 2;
+    const x = Math.min(Math.max(mark.right - box.left, half + 8), box.width - half - 8);
+    tip.style.left = x + 'px';
+    tip.style.top = (mark.top - box.top) + 'px';
+  }
+  const hide = () => { tip.hidden = true; };
+
+  chart.querySelectorAll('.bar-row').forEach(row => {
+    const bar = row.querySelector('.bar');
+    if (!bar) return;
+    row.addEventListener('pointerenter', () => show(bar));
+    row.addEventListener('pointerleave', hide);
+    bar.addEventListener('focus', () => show(bar));
+    bar.addEventListener('blur', hide);
+  });
+});
+
+// Mark the section in view; anchor links work without JavaScript.
 const sectionLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
 if ('IntersectionObserver' in window && sectionLinks.length) {
   const observer = new IntersectionObserver(entries => {
@@ -83,7 +103,7 @@ if ('IntersectionObserver' in window && sectionLinks.length) {
         else link.removeAttribute('aria-current');
       });
     });
-  }, { rootMargin: '-15% 0px -60% 0px', threshold: 0 });
+  }, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
   sectionLinks.forEach(link => {
     const section = document.getElementById(link.hash.slice(1));
     if (section) observer.observe(section);
